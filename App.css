@@ -1,0 +1,194 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+  background: #0d0d0d;
+  color: #000000;
+}
+
+/* ===== APP WRAPPER ===== */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* ===== HEADER ===== */
+.App-header {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(145deg, #181818, #0f0f0f);
+  border: 1px solid #262626;
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(98, 77, 234, 0.2);
+}
+
+.header-dashboard {
+  margin-bottom: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #e59d0c;
+}
+
+/* ===== LOGO ===== */
+.App-logo {
+  height: clamp(80px, 18vw, 160px);
+  margin-bottom: 2rem;
+  animation: slowSpin 18s linear infinite;
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== DASHBOARD CARD ===== */
+.dashboard-data {   
+  background: #1f1f1f;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin: 2rem auto;
+  padding: 1.8rem;
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #dcdcdc;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.8px;
+
+  box-shadow: 0 0 20px rgba(98, 77, 234, 0.15);
+}
+
+/* ===== LINKS ===== */
+.App-link {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.App-link:hover {
+  color: #c4b5fd;
+}
+
+/* ========================================
+   >>>>>>>>>>>>  TABLE STYLING  <<<<<<<<<<<
+   ======================================== */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #141414;
+}
+
+th, td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #2a2a2a;
+  color: #dcdcdc;
+}
+
+th {
+  background: #222;
+  font-weight: 700;
+  color: #e59d0c;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background: #1f1f1f;
+  transition: 0.2s;
+}
+
+/* ===== RESPONSIVE TABLE ===== */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #111;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    padding: 10px;
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: #e59d0c;
+    font-weight: bold;
+  }
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 992px) {
+  .App-header {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-data {
+    padding: 1.2rem;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .App {
+    padding: 1rem;
+  }
+
+  .App-logo {
+    height: 70px;
+  }
+
+  .dashboard-data {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
